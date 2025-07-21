@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express=require("express");
 const router=require("./router/auth-router")
 const app=express();
@@ -15,7 +16,7 @@ app.route('/').get((req,res)=>{
 })
 
 
-const PORT=5000;
+const PORT=process.env.PORT;
 
 connetDB().then(()=>{
 app.listen(PORT,()=>{
